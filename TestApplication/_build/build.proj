@@ -10,11 +10,11 @@
 	<ArtifactsToClean Include=""/>
   </ItemGroup>
   
-  <Target Name="DeleteOldArtifacts">
+  <!--<Target Name="DeleteOldArtifacts">
 	<Delete Files="@(ArtifactsToClean)" />
-  </Target>
+  </Target>-->
 
-  <Target Name="Compile" DependsOnTargets="DeleteOldArtifacts">
+  <Target Name="Compile">
 	<MSBuild Projects="@(SolutionFile)" Targets="Clean;Build" Properties="Configuration=Debug;DefineConstants=TRACE;DEBUG;CODE_ANALYSIS" />
   </Target>
 </Project>
