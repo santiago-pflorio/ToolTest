@@ -7,7 +7,7 @@
 
   <ItemGroup>
 	<SolutionFile Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
-	<ArtifactsToClean Include=""/>
+	<!--<ArtifactsToClean Include=""/>-->
   </ItemGroup>
   
   <!--<Target Name="DeleteOldArtifacts">
