@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<SolutionFile Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
+	<SolutionFiles Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
 	<!--<ArtifactsToClean Include=""/>-->
   </ItemGroup>
   
