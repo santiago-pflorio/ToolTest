@@ -1,12 +1,12 @@
 <Project DefaultTargets="Compile" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+  	  <WorkingDirectory>..</WorkingDirectory>
 	  <ProgramFiles32 Condition="Exists('$(PROGRAMFILES) (x86)')">$(PROGRAMFILES) (x86)</ProgramFiles32>
 	  <ProgramFiles32 Condition="$(ProgramFiles32) == ''">$(PROGRAMFILES)</ProgramFiles32>
-	  <WorkingDirectory>..</WorkingDirectory>
   </PropertyGroup>
 
   <ItemGroup>
-	<SolutionFile Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
+	<SolutionFiles Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
 	<!--<ArtifactsToClean Include=""/>-->
   </ItemGroup>
   
