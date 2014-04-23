@@ -1,4 +1,4 @@
-<Project DefaultTargets="Compile" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
   	  <WorkingDirectory>..</WorkingDirectory>
 	  <ProgramFiles32 Condition="Exists('$(PROGRAMFILES) (x86)')">$(PROGRAMFILES) (x86)</ProgramFiles32>
@@ -6,15 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<SolutionFiles Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
-	<!--<ArtifactsToClean Include=""/>-->
+  <ProjectToBuild Include="$(WorkingDirectory)\TestApplication.sln">
+            <Properties>Configuration=DEBUG</Properties>
+        </ProjectToBuild>
   </ItemGroup>
-  
-  <!--<Target Name="DeleteOldArtifacts">
-	<Delete Files="@(ArtifactsToClean)" />
-  </Target>-->
 
-  <Target Name="Compile">
-	<MSBuild Projects="@(SolutionFile)" Targets="Clean;Build" Properties="Configuration=Debug;DefineConstants=TRACE;DEBUG" />
+  <Target Name="Build">
+	<MSBuild Projects="@(ProjectToBuild)" Targets="Clean;Build"/>
   </Target>
 </Project>
