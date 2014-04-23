@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<SolutionFiles Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
+	<SolutionFile Include="$(WorkingDirectory)\TestApplication\TestApplication.sln"/>
 	<!--<ArtifactsToClean Include=""/>-->
   </ItemGroup>
   
@@ -15,6 +15,6 @@
   </Target>-->
 
   <Target Name="Compile">
-	<MSBuild Projects="@(SolutionFile)" Targets="Clean;Build" Properties="Configuration=Debug;DefineConstants=TRACE;DEBUG;CODE_ANALYSIS" />
+	<MSBuild Projects="@(SolutionFile)" Targets="Clean;Build" Properties="Configuration=Debug;DefineConstants=TRACE;DEBUG" />
   </Target>
 </Project>
